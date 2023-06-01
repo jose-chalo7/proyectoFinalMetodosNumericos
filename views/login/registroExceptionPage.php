@@ -18,7 +18,7 @@
                 <p class="lead">
                     Por favor intente nuevamente.
                   </p>
-                <a href="../../registro.php" class="btn btn-primary">Intentar Nuevamente</a>
+                <a href="registro.php" class="btn btn-primary">Intentar Nuevamente</a>
             </div>
         </div>
 

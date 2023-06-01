@@ -18,7 +18,7 @@
       </div>
         <h1>Usuario Registrado Exitosamente!</h1> 
         <p>El usuario ha sido agregado al sistema.</p><br>
-        <a class="small" href="../../index.php">Iniciar Session Ahora!</a>
+        <a class="small" href="login.php">Iniciar Session Ahora!</a>
       </div>
 
 
