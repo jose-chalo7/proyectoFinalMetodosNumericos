@@ -13,15 +13,11 @@ if (!isset($_SESSION['usuario'])) {
 	}
 ?>
 
-
-?>
-
 <!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
      <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
-
 
 
     <!-- Bootstrap CSS -->
@@ -41,7 +37,7 @@ if (!isset($_SESSION['usuario'])) {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="inicio.php">Inicio</a>
+          <a class="nav-link" aria-current="page" href="../principal/inicio.php">Inicio</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,7 +46,7 @@ if (!isset($_SESSION['usuario'])) {
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="../metodos/metodoNewtonPrincipal.php">Metodo Newton Raphson</a></li>
             <li><a class="dropdown-item" href="../metodos/secante.php">Metodo Secante</a></li>
-            <li><a class="dropdown-item" href="#">Metodo Muller</a></li>
+            <li><a class="dropdown-item" href="../metodos/mullerPrincipal.php">Metodo Muller</a></li>
             <li><a class="dropdown-item" href="../metodos/gaussPrincipal.php">Metodo Gauss</a></li>
           </ul>
           <li class="nav-item">

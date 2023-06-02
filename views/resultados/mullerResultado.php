@@ -1,11 +1,14 @@
-<?php session_start();
+﻿<?php session_start();
 
 if (!isset($_SESSION['usuario'])) {
 	header("location:../login/login.php");
 }
 	require("../../controllers/funciones.php");
 	if (!empty($_POST)){
-		$valor = $_POST ['valor'];
+		$x1 = $_POST ['x1'];
+		$x2 = $_POST ['x2'];
+		$x3 = $_POST ['x3'];
+        $resultado;
 		
 	}
 ?>
@@ -15,7 +18,7 @@ if (!isset($_SESSION['usuario'])) {
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
 
 
 
@@ -59,9 +62,10 @@ if (!isset($_SESSION['usuario'])) {
 
 <!-- Page Content -->
 <div class="container">
-  <h1 class="mt-4">Newton Raphson</h1>
-  <p>Es un algoritmo para encontrar aproximaciones de los ceros o raices de una funcion real.</p><br>
-    <p>Tambien puede ser usado para encontrar el maximo o minimo de una funcion, encontrando los ceros de su primera derivada.</p><br>
+  <h1 class="mt-4">Método Muller</h1>
+  <p>Muller Method es un algoritmo de búsqueda de raíces para encontrar la raíz de una ecuación de la forma, f(x)=0. Fue descubierto por David E. Muller en 1956.
+Comienza con tres suposiciones iniciales de la raíz y luego construye una parábola a través de estos tres puntos, y toma la intersección del eje x con la parábola como la próxima aproximación. Este proceso continúa hasta que se encuentra una raíz con el nivel de precisión deseado.
+En este programa se podra resolver por medio de la ecuacion: f(x) = x ^ 3 + 2x ^ 2 + 10x - 20</p><br>
       <h1 class="mt-4">RESULTADO:</h1>
 
 </div>
@@ -77,11 +81,7 @@ if (!isset($_SESSION['usuario'])) {
          
                     <?php
 							echo "<table >";
-							for($i = 0; $i < 6; $i++){
-								echo "<tr><td><h1>Valor Aprox: ".$valor."</h1></td></tr><br/>";
-								$valor = newton($valor);
-									
-							}
+                                $resultado = Muller($x1,$x2,$x3);
 								echo "</table>";
 					?>
 

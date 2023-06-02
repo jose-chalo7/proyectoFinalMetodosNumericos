@@ -1,9 +1,8 @@
 ﻿<?php session_start();
 
 if (!isset($_SESSION['usuario'])) {
-	header("location:../login/login.php");
+	header("location:../login/index.php");
 }
-require("../../controllers/funciones.php");
 
 ?>
 
@@ -11,12 +10,13 @@ require("../../controllers/funciones.php");
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
+        <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
+
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Newton Raphson</title>
+    <title>Método Muller</title>
   </head>
   <body>
    <!-- Navigation -->
@@ -54,8 +54,10 @@ require("../../controllers/funciones.php");
 
 <!-- Page Content -->
 <div class="container">
-  <h1 class="mt-4">Metodo de la Secante.</h1>
-  <p>Metodo de la Secante para el calculo de la funcion f(x) = f(x)=x³+2x²+10x-20 con el método de la secante.</p><br>
+  <h1 class="mt-4">Método Muller</h1>
+  <p>Muller Method es un algoritmo de búsqueda de raíces para encontrar la raíz de una ecuación de la forma, f(x)=0. Fue descubierto por David E. Muller en 1956.
+Comienza con tres suposiciones iniciales de la raíz y luego construye una parábola a través de estos tres puntos, y toma la intersección del eje x con la parábola como la próxima aproximación. Este proceso continúa hasta que se encuentra una raíz con el nivel de precisión deseado.
+En este programa se podra resolver por medio de la ecuacion: f(x) = x ^ 3 + 2x ^ 2 + 10x - 20</p><br>
 
 </div>
 
@@ -65,21 +67,27 @@ require("../../controllers/funciones.php");
       <div class="card border-0 rounded-3 shadow-lg">
         <div class="card-body p-4">
           <div class="text-center">
-            <div class="h1 fw-light">Metodo de la Secante</div>
+            <div class="h1 fw-light">Metodo de Newton Raphson</div>
           </div>
-          <form id="contactForm"  name="newton"  method="post">
+          <form id="contactForm"  name="newton"  method="post" action="../resultados/mullerResultado.php">
 
             <!-- Name Input -->
             <div class="form-floating mb-3">
-              <input class="form-control" id="x0" name="x0" type="text" placeholder="Valor Inicial" data-sb-validations="required" />
-              <label for="name">Ingrese la aproximación inicial de x0: </label>
-              <div class="invalid-feedback" data-sb-feedback="valor:required">El valor de x0 es Obligatorio.</div>
+              <input class="form-control" id="x1" name="x1" type="text" placeholder="Valor X1" data-sb-validations="required" />
+              <label for="name">Valor X1:</label>
+              <div class="invalid-feedback" data-sb-feedback="valor:required">El valor X1 es Obligatorio.</div>
             </div>
 
-             <div class="form-floating mb-3">
-              <input class="form-control" id="x1" name="x1" type="text" placeholder="Valor Inicial" data-sb-validations="required" />
-              <label for="name">Ingrese la aproximación inicial de x1:</label>
-              <div class="invalid-feedback" data-sb-feedback="valor:required">El valor de x1 es Obligatorio.</div>
+            <div class="form-floating mb-3">
+              <input class="form-control" id="x2" name="x2" type="text" placeholder="Valor X2" data-sb-validations="required" />
+              <label for="name">Valor X2:</label>
+              <div class="invalid-feedback" data-sb-feedback="valor:required">El valor X2 es Obligatorio.</div>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input class="form-control" id="x3" name="x3" type="text" placeholder="Valor X3" data-sb-validations="required" />
+              <label for="name">Valor X3:</label>
+              <div class="invalid-feedback" data-sb-feedback="valor:required">El valor X3 es Obligatorio.</div>
             </div>
 
             <!-- Submit button -->
@@ -88,59 +96,6 @@ require("../../controllers/funciones.php");
             </div>
           </form>
           <!-- End of contact form -->
-
-          <br>
-          <?php
-
-          if (isset ($_POST['x0']) && isset ($_POST['x1'])) 
-          {
-
-          $x0 = floatval($_POST['x0']);
-          $x1 = floatval($_POST['x1']);
-          $n = 1;
-
-          ?>
-          <br>
-          <h4>Resultados:</h4>
-
-          <table border="5" cellpadding="1" cellspacing="0">
-          <thead>
-            <tr align="center"><th>No.</th><th>X<sub><sub>N</sub></sub></th><th>Error?</th></tr>
-           </thead>
-            <tbody>
-            <tr><td align="center">0</td><td align="center"><?php echo $x0;?></td><td>&nbsp;</td></tr>
-
-        <?php
-            
-        do {
-            $err = abs($x0-$x1);
-            echo "<tr><td align=\"center\">$n</td><td align=\"center\"> $x1</td><td align=\"center\">$err</td></tr>\n";
-            if($err!=0){
-                $temp = $x1;
-                $x1 = $x1 - ($x1 -$x0
-                ) * secante($x1) / (secante($x1) - secante($x0));
-                $x0 = $temp;
-            }
-            $n++;
-
-        } while ($err>TOLERANCIA && $n<=ITERACIONES_MAXIMAS);
-
-        ?>
-
-
-        </tbody>
-        </table>
-        <br>
-
-    <?php
-        
-        if($n<ITERACIONES_MAXIMAS)
-        echo "La solucion es: $x1";
-        else 
-        echo "No se encontraron , raizes, cambiar aproximaciones iniciales o aumentar ITERACIONES_MAXIMAS";
-
-          }
-    ?>
 
         </div>
       </div>

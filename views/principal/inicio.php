@@ -40,7 +40,7 @@ if (!isset($_SESSION['usuario'])) {
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="../metodos/metodoNewtonPrincipal.php">Metodo Newton Raphson</a></li>
             <li><a class="dropdown-item" href="../metodos/secante.php">Metodo Secante</a></li>
-            <li><a class="dropdown-item" href="#">Metodo Muller</a></li>
+            <li><a class="dropdown-item" href="../metodos/mullerPrincipal.php">Metodo Muller</a></li>
             <li><a class="dropdown-item" href="../metodos/gaussPrincipal.php">Metodo Gauss</a></li>
           </ul>
           <li class="nav-item">
