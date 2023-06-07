@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">   
-    <link rel="stylesheet" href="../../public/css/success.css">
+    <link rel="stylesheet" href="../public/css/success.css">
 
     <title>Usuario Registrado!</title>
   </head>
@@ -18,7 +18,12 @@
       </div>
         <h1>Usuario Registrado Exitosamente!</h1> 
         <p>El usuario ha sido agregado al sistema.</p><br>
-        <a class="small" href="login.php">Iniciar Session Ahora!</a>
+         <form action="http://localhost/proyectoFinalMetodosNumericos/?contr=loginController&func=Cargar_Pagina_Login" method="post">
+             <div class="d-grid">
+                  <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Igresar!</button>
+                </div>
+
+              </form>
       </div>
 
 

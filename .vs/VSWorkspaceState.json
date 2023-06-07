@@ -1,13 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\clases",
-    "\\img",
+    "\\controllers",
+    "\\models",
     "\\public",
-    "\\servidor",
-    "\\servidor\\login",
-    "\\servidor\\registro"
+    "\\views",
+    "\\views\\metodos"
   ],
-  "SelectedNode": "\\newton.php",
+  "SelectedNode": "\\models\\conexion.php",
   "PreviewInSolutionExplorer": false
 }

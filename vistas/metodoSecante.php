@@ -1,9 +1,9 @@
 ﻿<?php session_start();
 
 if (!isset($_SESSION['usuario'])) {
-	header("location:../login/login.php");
+	header("location:http://localhost/proyectoFinalMetodosNumericos/?contr=loginController&func=Cargar_Pagina_Login");
 }
-require("../../controllers/funciones.php");
+	require("../controladores/metodosController.php");
 
 ?>
 
@@ -23,7 +23,7 @@ require("../../controllers/funciones.php");
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
   <div class="container">
     <a class="navbar-brand" href="#">
-      <img src="../../img/umg.jpg" alt="..." height="60">
+      <img src="../img/umg.jpg" alt="..." height="60">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -31,20 +31,20 @@ require("../../controllers/funciones.php");
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="../principal/inicio.php">Inicio</a>
+          <a class="nav-link" aria-current="page" href="inicio.php">Inicio</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Menu de Opciones
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="metodoNewtonPrincipal.php">Metodo Newton Raphson</a></li>
-            <li><a class="dropdown-item" href="secante.php">Metodo Secante</a></li>
-            <li><a class="dropdown-item" href="mullerPrincipal.php">Metodo Muller</a></li>
-            <li><a class="dropdown-item" href="gaussPrincipal.php">Metodo Gauss</a></li>
+            <li><a class="dropdown-item" href="metodoNewtonRaphson.php">Metodo Newton Raphson</a></li>
+            <li><a class="dropdown-item" href="metodoSecante.php">Metodo Secante</a></li>
+            <li><a class="dropdown-item" href="metodoMuller.php">Metodo Muller</a></li>
+            <li><a class="dropdown-item" href="metodoGauss.php">Metodo Gauss</a></li>
           </ul>
           <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="../../controllers/logout.php">Cerrar Sesion</a>
+          <a class="nav-link" aria-current="page" href="logout.php">Cerrar Sesion</a>
         </li>
         </li>
       </ul>

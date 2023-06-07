@@ -14,11 +14,16 @@
    <div class="d-flex align-items-center justify-content-center vh-100">
             <div class="text-center">
                 <h1 class="display-1 fw-bold">Error!</h1>
-                <p class="fs-3"> <span class="text-danger">Algo Salio mal</span> al registrar este usuario.</p>
+                <p class="fs-3"> <span class="text-danger">Usuario o Password</span> Incorrectas o No Registradas.</p>
                 <p class="lead">
-                    Por favor intente nuevamente.
+                    Por favor verifique sus credenciales e intente nuevamente.
                   </p>
-                <a href="registro.php" class="btn btn-primary">Intentar Nuevamente</a>
+               <form action="http://localhost/proyectoFinalMetodosNumericos/?contr=loginController&func=Cargar_Pagina_Login" method="post">
+             <div class="d-grid">
+                  <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Regresar!</button>
+                </div>
+
+              </form>
             </div>
         </div>
 
